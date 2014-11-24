@@ -30,6 +30,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to @project, flash: { success: 'Project has been updated.' }
     else
+      flash[:error] = 'Project has not been updated.'
       render :edit
     end
   end
