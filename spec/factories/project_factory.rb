@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :project do
-    name 'Sublime text 3'
+    name 'Example Project'
   end
 end

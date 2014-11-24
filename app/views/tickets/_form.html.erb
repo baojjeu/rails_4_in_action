@@ -1,13 +1,13 @@
-<%= form_for @project do |f| %>
-  <% if @project.errors.any? %>
+<%= form_for [@project, @ticket] do |f| %>
+  <% if @ticket.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@project.errors.count, 'error') %>
-        prohibited this project from being saved.
+        <%= pluralize(@ticket.errors.count, 'error') %>
+        prohibited this ticket from being saved.
       </h2>
 
       <ul>
-        <% @project.errors.full_messages.each do |msg| %>
+        <% @ticket.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -15,8 +15,8 @@
   <% end %>
 
   <div>
-    <%= f.label :name, 'Name' %>
-    <%= f.text_field :name %>
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title %>
   </div>
 
   <div>
