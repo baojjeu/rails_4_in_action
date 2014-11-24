@@ -9,14 +9,14 @@ feature 'Editing Projects' do
     click_link 'Edit'
   end
 
-  scenario 'can edit a project' do
+  scenario 'Editing a project' do
     fill_in 'Name', with: 'Sublime Text 3 beta'
     click_button 'Update Project'
 
     expect(page).to have_content('Project has been updated.')
   end
 
-  scenario 'can not update a project with invalid attributes' do
+  scenario 'Can not update a project with invalid attributes' do
     fill_in 'Name', with: ''
     click_button 'Update Project'
 
