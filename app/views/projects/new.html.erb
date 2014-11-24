@@ -1,4 +1,17 @@
 <%= form_for @project do |f| %>
+
+  <% if @project.errors.any? %>
+    <h2>
+      <%= pluralize(@project.errors.count, 'error') %>
+      prohibited this project from being saved:
+    </h2>
+    <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div>
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name %>

@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to @project, flash: { success: 'Project has been created.' }
     else
+      flash[:error] = 'Project has not been created.'
       render :new
     end
   end
