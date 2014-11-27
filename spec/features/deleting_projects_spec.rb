@@ -1,4 +1,4 @@
-feature 'Deleteing Projects' do
+feature 'Deleting Projects' do
   before do
     FactoryGirl.create(:project, name: 'Sublime Text 3')
 
