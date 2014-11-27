@@ -4,7 +4,6 @@ feature 'Deleting Projects' do
 
     visit '/'
     click_link 'Sublime Text 3'
-
   end
 
   scenario 'Deleting a project' do

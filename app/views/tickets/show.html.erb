@@ -4,5 +4,12 @@
 </div>
 
 <div>
-  <%= link_to 'Edit ticket', edit_project_ticket_path(@ticket.project, @ticket) %>
+  <%= link_to 'Edit ticket', [:edit, @project, @ticket] %>
+  <%= link_to 'Delete ticket', [@project, @ticket],
+      method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <%# Or %>
+  <%# link_to 'Edit ticket', edit_project_ticket_path(@project, @ticket) %>
+  <%# link_to 'Delete ticket' project_ticket_path(@project, @ticket), method: :delete %>
 </div>
+
