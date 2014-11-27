@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature 'Viewing Tickets' do
   before do
     sublime_text_3 = FactoryGirl.create(:project, name: 'Sublime Text 3')

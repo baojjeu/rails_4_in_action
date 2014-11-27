@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature 'Deleteing Projects' do
   before do
     FactoryGirl.create(:project, name: 'Sublime Text 3')

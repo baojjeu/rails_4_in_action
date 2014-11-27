@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature 'Creating Projects' do
   before do
     visit '/'

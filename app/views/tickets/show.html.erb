@@ -2,3 +2,7 @@
   <h2><%= @ticket.title %></h2>
   <div><%= @ticket.description %></div>
 </div>
+
+<div>
+  <%= link_to 'Edit ticket', edit_project_ticket_path(@ticket.project, @ticket) %>
+</div>

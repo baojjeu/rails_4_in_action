@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature 'Creating Tickets' do
   before do
     FactoryGirl.create(:project, name: 'Chrome')
