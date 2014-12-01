@@ -1,0 +1,15 @@
+<%= form_for :signin do |f| %>
+  <div>
+    <%= f.label :email, 'E-mail' %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit 'Sign in' %>
+  </div>
+<% end %>

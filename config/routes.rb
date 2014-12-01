@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
-  get 'users/show'
 
   root 'projects#index'
+
+  get 'signin' => 'sessions#new'
+  post 'signin' => 'sessions#create'
 
   resources :users
   resources :projects do
