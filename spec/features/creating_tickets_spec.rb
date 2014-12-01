@@ -1,9 +1,19 @@
 feature 'Creating Tickets' do
   before do
-    FactoryGirl.create(:project, name: 'Chrome')
+    project = FactoryGirl.create(:project)
+    user = FactoryGirl.create(:user)
 
     visit '/'
-    click_link 'Chrome'
+    click_link project.name
+    click_link 'New Ticket'
+    message = 'You need to sign in or sign up before continuing.'
+    expect(page).to have_content(message)
+
+    fill_in 'E-mail', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+
+    click_link project.name
     click_link 'New Ticket'
   end
 
