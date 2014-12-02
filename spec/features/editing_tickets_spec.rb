@@ -1,9 +1,17 @@
+require 'support/authentication_helpers'
+
 feature 'Editing tickets' do
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:project) { FactoryGirl.create(:project) }
-  let!(:ticket) { FactoryGirl.create(:ticket, project: project) }
+  let!(:ticket) do
+    ticket = FactoryGirl.create(:ticket, project: project)
+    ticket.update(user: user)
+    ticket
+  end
 
   before do
     visit '/'
+    sign_in_as!(user)
     click_link project.name
     click_link ticket.title
     click_link 'Edit ticket'

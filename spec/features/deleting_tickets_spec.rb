@@ -1,8 +1,17 @@
+require 'support/authentication_helpers'
+
 feature 'Deleting tickets' do
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:project) { FactoryGirl.create(:project) }
-  let!(:ticket) { FactoryGirl.create(:ticket, project: project) }
+  let!(:ticket) {
+    ticket = FactoryGirl.create(:ticket, project: project)
+    ticket.update(user: user)
+    ticket
+  }
 
   before do
+    sign_in_as!(user)
+
     visit '/'
 
     click_link project.name

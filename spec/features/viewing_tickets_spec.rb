@@ -1,13 +1,16 @@
 feature 'Viewing Tickets' do
   before do
-    sublime_text_3 = FactoryGirl.create(:project, name: 'Sublime Text 3')
-    FactoryGirl.create(:ticket,
-       project: sublime_text_3,
-       title: 'Make it shiny!',
-       description: 'GreatGreatGreatGreatGreat')
+    user = FactoryGirl.create(:user)
 
-    textmate = FactoryGirl.create(:project, name: 'Text mate')
-    FactoryGirl.create(:ticket, project: textmate, title: 'Hey', description: 'YoYoYoYoYo')
+    sublime_text_3 = FactoryGirl.create(:project, name: 'Sublime Text 3')
+
+    ticket = FactoryGirl.create(:ticket,
+               project: sublime_text_3,
+               title: 'Make it shiny!',
+               description: 'GreatGreatGreatGreatGreat')
+
+    ticket.update(user: user)
+
     visit '/'
   end
 
