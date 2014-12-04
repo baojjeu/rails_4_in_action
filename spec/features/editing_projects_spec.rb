@@ -3,6 +3,9 @@ feature 'Editing Projects' do
     FactoryGirl.create(:project, name: 'Sublime Text 3')
 
     visit '/'
+
+    sign_in_as!(FactoryGirl.create(:admin_user))
+
     click_link 'Sublime Text 3'
     click_link 'Edit'
   end

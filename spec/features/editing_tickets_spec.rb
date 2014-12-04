@@ -1,5 +1,3 @@
-require 'support/authentication_helpers'
-
 feature 'Editing tickets' do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:project) { FactoryGirl.create(:project) }
