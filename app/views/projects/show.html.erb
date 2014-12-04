@@ -8,11 +8,15 @@
   <% end %>
 </ol>
 
-<div><%= link_to 'New Ticket', new_project_ticket_path(@project) %></div>
-<div><%= link_to 'Edit', edit_project_path(@project) %></div>
-<div><%= link_to 'Delete Project',
+<% admins_only do %>
+  <%= link_to 'Edit Project', edit_project_path(@project) %>
+  <div><%= link_to 'Delete Project',
       project_path(@project),
       method: :delete,
       data: { confirm:
               "Are you sure?"
             } %></div>
+<% end %>
+
+<div><%= link_to 'New Ticket', new_project_ticket_path(@project) %></div>
+<div><%= link_to 'Edit', edit_project_path(@project) %></div>
