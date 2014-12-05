@@ -8,8 +8,12 @@
 </head>
 <body>
 
-<%= link_to 'Sign up', new_user_path %>
-<%= link_to 'Sign in', signin_path %>
+<% if current_user %>
+  Signed in as <%= current_user.email %>
+  <% admins_only do %>
+    <%= link_to 'Admin', admin_root_path %>
+  <% end %>
+<% end %>
 
 <% flash.each do |key, value| %>
   <div class="alert alert-<%= key %>">
