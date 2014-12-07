@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  scope :admins, -> { where(admin: true) }
+  scope :by_name, -> { order(:name) }
 
   validates :email, presence: true
 

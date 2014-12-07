@@ -12,6 +12,9 @@ feature 'Viewing Tickets' do
     ticket.update(user: user)
 
     visit '/'
+
+    define_permission!(user, 'view', sublime_text_3)
+    sign_in_as!(user)
   end
 
   scenario 'Viewing tickets for a given project' do

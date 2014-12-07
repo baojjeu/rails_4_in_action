@@ -1,10 +1,9 @@
 RSpec.describe ProjectsController, :type => :controller do
   let(:user) { FactoryGirl.create(:user) }
 
+  before { sign_in(user) }
+
   context 'standard users' do
-    before do
-      sign_in(user)
-    end
 
     { new:     :get,
       edit:    :get,
@@ -26,5 +25,12 @@ RSpec.describe ProjectsController, :type => :controller do
     message = 'The project you were looking for could not be found.'
 
     expect(flash[:error]).to eql(message)
+  end
+
+  it 'cannot access the show action without permission' do
+    p = FactoryGirl.create(:project)
+    get :show, id: p.id
+
+    expect(flash[:error]).to eql('The project you were looking for could not be found.')
   end
 end

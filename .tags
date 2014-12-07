@@ -14,10 +14,13 @@ ApplicationController	app/controllers/application_controller.rb	/^class Applicat
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 AuthHelpers	spec/support/auth_helpers.rb	/^module AuthHelpers$/;"	m
 AuthenticationHelpers	spec/support/authentication_helpers.rb	/^module AuthenticationHelpers$/;"	m
+AuthorizationHelpers	spec/support/authorization_helpers.rb	/^module AuthorizationHelpers$/;"	m
 CapybaraHelpers	spec/support/capybara_helpers.rb	/^module CapybaraHelpers$/;"	m
+CreatePermissions	db/migrate/20141206071826_create_permissions.rb	/^class CreatePermissions < ActiveRecord::Migration$/;"	c
 CreateProjects	db/migrate/20141123104758_create_projects.rb	/^class CreateProjects < ActiveRecord::Migration$/;"	c
 CreateTickets	db/migrate/20141124154932_create_tickets.rb	/^class CreateTickets < ActiveRecord::Migration$/;"	c
 CreateUsers	db/migrate/20141127040822_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+Permission	app/models/permission.rb	/^class Permission < ActiveRecord::Base$/;"	c
 Project	app/models/project.rb	/^class Project < ActiveRecord::Base$/;"	c
 ProjectsController	app/controllers/projects_controller.rb	/^class ProjectsController < ApplicationController$/;"	c
 ProjectsHelper	app/helpers/projects_helper.rb	/^module ProjectsHelper$/;"	m
@@ -39,18 +42,25 @@ change	db/migrate/20141124154932_create_tickets.rb	/^  def change$/;"	f	class:Cr
 change	db/migrate/20141127040822_create_users.rb	/^  def change$/;"	f	class:CreateUsers
 change	db/migrate/20141202083753_add_user_to_tickets.rb	/^  def change$/;"	f	class:AddUserToTickets
 change	db/migrate/20141203031400_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+change	db/migrate/20141206071826_create_permissions.rb	/^  def change$/;"	f	class:CreatePermissions
+create	app/controllers/admin/users_controller.rb	/^  def create$/;"	f	class:Admin
 create	app/controllers/projects_controller.rb	/^  def create$/;"	f	class:ProjectsController
 create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
 create	app/controllers/tickets_controller.rb	/^  def create$/;"	f	class:TicketsController
 create	app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
 current_user	app/controllers/application_controller.rb	/^    def current_user$/;"	f	class:ApplicationController
+define_permission!	spec/support/authorization_helpers.rb	/^  def define_permission!(user, action, thing)$/;"	f	class:AuthorizationHelpers
+destroy	app/controllers/admin/users_controller.rb	/^  def destroy$/;"	f	class:Admin
 destroy	app/controllers/projects_controller.rb	/^  def destroy$/;"	f	class:ProjectsController
 destroy	app/controllers/tickets_controller.rb	/^  def destroy$/;"	f	class:TicketsController
+edit	app/controllers/admin/users_controller.rb	/^  def edit$/;"	f	class:Admin
 edit	app/controllers/projects_controller.rb	/^  def edit$/;"	f	class:ProjectsController
 edit	app/controllers/tickets_controller.rb	/^  def edit$/;"	f	class:TicketsController
 edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
+index	app/controllers/admin/base_controller.rb	/^  def index$/;"	f	class:Admin
 index	app/controllers/admin/users_controller.rb	/^  def index$/;"	f	class:Admin
 index	app/controllers/projects_controller.rb	/^  def index$/;"	f	class:ProjectsController
+new	app/controllers/admin/users_controller.rb	/^  def new$/;"	f	class:Admin
 new	app/controllers/projects_controller.rb	/^  def new$/;"	f	class:ProjectsController
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 new	app/controllers/tickets_controller.rb	/^  def new$/;"	f	class:TicketsController
@@ -60,7 +70,9 @@ require_signin!	app/controllers/application_controller.rb	/^    def require_sign
 set_project	app/controllers/projects_controller.rb	/^    def set_project$/;"	f	class:ProjectsController
 set_project	app/controllers/tickets_controller.rb	/^    def set_project$/;"	f	class:TicketsController
 set_ticket	app/controllers/tickets_controller.rb	/^    def set_ticket$/;"	f	class:TicketsController
+set_user	app/controllers/admin/users_controller.rb	/^    def set_user$/;"	f	class:Admin
 set_user	app/controllers/users_controller.rb	/^    def set_user$/;"	f	class:UsersController
+show	app/controllers/admin/users_controller.rb	/^  def show$/;"	f	class:Admin
 show	app/controllers/projects_controller.rb	/^  def show$/;"	f	class:ProjectsController
 show	app/controllers/tickets_controller.rb	/^  def show$/;"	f	class:TicketsController
 show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
@@ -68,7 +80,10 @@ sign_in	spec/support/auth_helpers.rb	/^  def sign_in(user)$/;"	f	class:AuthHelpe
 sign_in_as!	spec/support/authentication_helpers.rb	/^  def sign_in_as!(user)$/;"	f	class:AuthenticationHelpers
 ticket_params	app/controllers/tickets_controller.rb	/^    def ticket_params$/;"	f	class:TicketsController
 title	app/helpers/application_helper.rb	/^  def title(*parts)$/;"	f	class:ApplicationHelper
+to_s	app/models/user.rb	/^  def to_s$/;"	f	class:User
+update	app/controllers/admin/users_controller.rb	/^  def update$/;"	f	class:Admin
 update	app/controllers/projects_controller.rb	/^  def update$/;"	f	class:ProjectsController
 update	app/controllers/tickets_controller.rb	/^  def update$/;"	f	class:TicketsController
 update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+user_params	app/controllers/admin/users_controller.rb	/^    def user_params$/;"	f	class:Admin
 user_params	app/controllers/users_controller.rb	/^    def user_params$/;"	f	class:UsersController

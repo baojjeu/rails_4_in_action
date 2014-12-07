@@ -8,6 +8,7 @@ feature 'Editing tickets' do
   end
 
   before do
+    define_permission!(user, 'view', project)
     visit '/'
     sign_in_as!(user)
     click_link project.name

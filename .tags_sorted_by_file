@@ -4,8 +4,17 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 Admin	app/controllers/admin/base_controller.rb	/^class Admin::BaseController < ApplicationController$/;"	c
+index	app/controllers/admin/base_controller.rb	/^  def index$/;"	f	class:Admin
 Admin	app/controllers/admin/users_controller.rb	/^class Admin::UsersController < Admin::BaseController$/;"	c
+create	app/controllers/admin/users_controller.rb	/^  def create$/;"	f	class:Admin
+destroy	app/controllers/admin/users_controller.rb	/^  def destroy$/;"	f	class:Admin
+edit	app/controllers/admin/users_controller.rb	/^  def edit$/;"	f	class:Admin
 index	app/controllers/admin/users_controller.rb	/^  def index$/;"	f	class:Admin
+new	app/controllers/admin/users_controller.rb	/^  def new$/;"	f	class:Admin
+set_user	app/controllers/admin/users_controller.rb	/^    def set_user$/;"	f	class:Admin
+show	app/controllers/admin/users_controller.rb	/^  def show$/;"	f	class:Admin
+update	app/controllers/admin/users_controller.rb	/^  def update$/;"	f	class:Admin
+user_params	app/controllers/admin/users_controller.rb	/^    def user_params$/;"	f	class:Admin
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 authorize_admin!	app/controllers/application_controller.rb	/^    def authorize_admin!$/;"	f	class:ApplicationController
 current_user	app/controllers/application_controller.rb	/^    def current_user$/;"	f	class:ApplicationController
@@ -49,9 +58,11 @@ ProjectsHelper	app/helpers/projects_helper.rb	/^module ProjectsHelper$/;"	m
 SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
 TicketsHelper	app/helpers/tickets_helper.rb	/^module TicketsHelper$/;"	m
 UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+Permission	app/models/permission.rb	/^class Permission < ActiveRecord::Base$/;"	c
 Project	app/models/project.rb	/^class Project < ActiveRecord::Base$/;"	c
 Ticket	app/models/ticket.rb	/^class Ticket < ActiveRecord::Base$/;"	c
 User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+to_s	app/models/user.rb	/^  def to_s$/;"	f	class:User
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Rails4InAction
 Rails4InAction	config/application.rb	/^module Rails4InAction$/;"	m
 CreateProjects	db/migrate/20141123104758_create_projects.rb	/^class CreateProjects < ActiveRecord::Migration$/;"	c
@@ -64,11 +75,15 @@ AddUserToTickets	db/migrate/20141202083753_add_user_to_tickets.rb	/^class AddUse
 change	db/migrate/20141202083753_add_user_to_tickets.rb	/^  def change$/;"	f	class:AddUserToTickets
 AddAdminToUsers	db/migrate/20141203031400_add_admin_to_users.rb	/^class AddAdminToUsers < ActiveRecord::Migration$/;"	c
 change	db/migrate/20141203031400_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+CreatePermissions	db/migrate/20141206071826_create_permissions.rb	/^class CreatePermissions < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141206071826_create_permissions.rb	/^  def change$/;"	f	class:CreatePermissions
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 AuthHelpers	spec/support/auth_helpers.rb	/^module AuthHelpers$/;"	m
 sign_in	spec/support/auth_helpers.rb	/^  def sign_in(user)$/;"	f	class:AuthHelpers
 AuthenticationHelpers	spec/support/authentication_helpers.rb	/^module AuthenticationHelpers$/;"	m
 sign_in_as!	spec/support/authentication_helpers.rb	/^  def sign_in_as!(user)$/;"	f	class:AuthenticationHelpers
+AuthorizationHelpers	spec/support/authorization_helpers.rb	/^module AuthorizationHelpers$/;"	m
+define_permission!	spec/support/authorization_helpers.rb	/^  def define_permission!(user, action, thing)$/;"	f	class:AuthorizationHelpers
 CapybaraHelpers	spec/support/capybara_helpers.rb	/^module CapybaraHelpers$/;"	m
 assert_link_for	spec/support/capybara_helpers.rb	/^  def assert_link_for(text)$/;"	f	class:CapybaraHelpers
 assert_no_link_for	spec/support/capybara_helpers.rb	/^  def assert_no_link_for(text)$/;"	f	class:CapybaraHelpers
