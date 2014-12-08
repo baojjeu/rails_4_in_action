@@ -43,7 +43,7 @@ class TicketsController < ApplicationController
 
   private
     def set_project
-      @projects = Project.for(current_user).find(params[:project_id])
+      @project = Project.for(current_user).find(params[:project_id])
     rescue ActiveRecord::RecordNotFound
       redirect_to root_url,
         flash: { error: 'The project you were looking for could not be found.' }
