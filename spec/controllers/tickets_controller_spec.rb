@@ -4,11 +4,12 @@ RSpec.describe TicketsController, :type => :controller do
   let(:ticket) { FactoryGirl.create(:ticket, project: project, user: user) }
 
   context 'Standard users' do
-    it 'cannot access s ticket for a project' do
-      sign_in(user)
+    before { sign_in(user) }
+
+    it 'cannot access a ticket for a project' do
       get :show, id: ticket.id, project_id: project.id
 
-      expect(response).to redirect_to(root_url)
+      expect(response).to redirect_to root_path
       expect(flash[:error]).to eql('The project you were looking for could not be found.')
     end
   end
