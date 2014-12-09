@@ -26,6 +26,12 @@ RSpec.describe TicketsController, :type => :controller do
       expect(flash[:error]).to eql(message)
     end
 
+    def cannot_edit_tickets!
+      expect(response).to redirect_to(project)
+      message = 'You cannot edit tickets on this project.'
+      expect(flash[:error]).to eql(message)
+    end
+
     it 'cannot begin to create a ticket' do
       get :new, project_id: project.id
       cannot_create_tickets!
@@ -34,6 +40,16 @@ RSpec.describe TicketsController, :type => :controller do
     it 'cannot create a ticket without permission' do
       post :create, project_id: project.id
       cannot_create_tickets!
+    end
+
+    it 'cannot edit a ticket without permission' do
+      get :edit, id: ticket.id, project_id: project.id
+      cannot_edit_tickets!
+    end
+
+    it 'cannot update a ticket without permission' do
+      put :update, id: ticket.id, project_id: project.id, ticket: {}
+      cannot_edit_tickets!
     end
   end
 end
