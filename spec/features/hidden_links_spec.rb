@@ -2,10 +2,9 @@ feature 'Hidden links' do
   let(:user) { FactoryGirl.create(:user) }
   let(:admin) { FactoryGirl.create(:admin_user) }
   let(:project) { FactoryGirl.create(:project) }
+  let(:ticket) { FactoryGirl.create(:ticket, project: project, user: user) }
 
-  before do
-    visit '/'
-  end
+  before { visit '/' }
 
   context 'Anonymous users' do
     scenario 'cannot see the New Project' do
@@ -43,6 +42,57 @@ feature 'Hidden links' do
 
       assert_no_link_for 'Delete Project'
     end
+
+    scenario 'New Ticket link is shown to a user with permission' do
+      define_permission!(user, 'view', project)
+      define_permission!(user, 'create tickets', project)
+
+      visit project_path(project)
+
+      assert_link_for 'New Ticket'
+    end
+
+    scenario 'New Ticket link is hidden from a user without permission' do
+      define_permission!(user, 'view', project)
+
+      visit project_path(project)
+      assert_no_link_for 'New Ticket'
+    end
+
+    scenario 'Edit ticket link is hidden from a user without permission' do
+      # create ticket
+      ticket
+      define_permission!(user, 'view', project)
+      visit project_path(project)
+      click_link ticket.title
+      assert_no_link_for 'Edit ticket'
+    end
+
+    scenario 'Edit ticket link is shown to a user with permission' do
+      ticket
+      define_permission!(user, 'view', project)
+      define_permission!(user, 'edit tickets', project)
+      visit project_path(project)
+      click_link ticket.title
+      assert_link_for 'Edit ticket'
+    end
+
+    scenario 'Delete ticket is shown to a user with permission' do
+      ticket
+      define_permission!(user, 'view', project)
+      define_permission!(user, 'delete tickets', project)
+      visit project_path(project)
+      click_link ticket.title
+      assert_link_for 'Delete ticket'
+    end
+
+    scenario 'Delete ticket is hidden to a user without permission' do
+      ticket
+      define_permission!(user, 'view', project)
+      visit project_path(project)
+      click_link ticket.title
+      assert_no_link_for 'Delete ticket'
+    end
   end
 
   context 'Admin users' do
@@ -62,6 +112,32 @@ feature 'Hidden links' do
       visit project_path(project)
 
       assert_link_for 'Delete Project'
+    end
+
+    scenario 'New ticket link is shown to admins' do
+      visit project_path(project)
+
+      assert_link_for 'New Ticket'
+    end
+
+    scenario 'Edit ticket link is shown to admins' do
+      ticket
+
+      visit project_path(project)
+
+      click_link ticket.title
+
+      assert_link_for 'Edit ticket'
+    end
+
+    scenario 'Delete tickets link is shown to admins' do
+      ticket
+
+      visit project_path(project)
+
+      click_link ticket.title
+
+      assert_link_for 'Delete ticket'
     end
   end
 end

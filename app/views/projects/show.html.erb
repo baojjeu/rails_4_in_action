@@ -18,5 +18,8 @@
             } %></div>
 <% end %>
 
-<div><%= link_to 'New Ticket', new_project_ticket_path(@project) %></div>
+<% authorized?('create tickets', @project) do %>
+  <div><%= link_to 'New Ticket', new_project_ticket_path(@project) %></div>
+<% end %>
+
 <div><%= link_to 'Edit', edit_project_path(@project) %></div>

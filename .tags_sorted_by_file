@@ -33,6 +33,9 @@ SessionsController	app/controllers/sessions_controller.rb	/^class SessionsContro
 create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 TicketsController	app/controllers/tickets_controller.rb	/^class TicketsController < ApplicationController$/;"	c
+authorize_create!	app/controllers/tickets_controller.rb	/^    def authorize_create!$/;"	f	class:TicketsController
+authorize_delete!	app/controllers/tickets_controller.rb	/^    def authorize_delete!$/;"	f	class:TicketsController
+authorize_update!	app/controllers/tickets_controller.rb	/^    def authorize_update!$/;"	f	class:TicketsController
 create	app/controllers/tickets_controller.rb	/^  def create$/;"	f	class:TicketsController
 destroy	app/controllers/tickets_controller.rb	/^  def destroy$/;"	f	class:TicketsController
 edit	app/controllers/tickets_controller.rb	/^  def edit$/;"	f	class:TicketsController
@@ -53,11 +56,14 @@ user_params	app/controllers/users_controller.rb	/^    def user_params$/;"	f	clas
 Admin	app/helpers/admin/users_helper.rb	/^module Admin::UsersHelper$/;"	m
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 admins_only	app/helpers/application_helper.rb	/^  def admins_only(&block)$/;"	f	class:ApplicationHelper
+authorized?	app/helpers/application_helper.rb	/^  def authorized?(permission, thing, &block)$/;"	f	class:ApplicationHelper
 title	app/helpers/application_helper.rb	/^  def title(*parts)$/;"	f	class:ApplicationHelper
 ProjectsHelper	app/helpers/projects_helper.rb	/^module ProjectsHelper$/;"	m
 SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
 TicketsHelper	app/helpers/tickets_helper.rb	/^module TicketsHelper$/;"	m
 UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+Ability	app/models/ability.rb	/^class Ability$/;"	c
+initialize	app/models/ability.rb	/^  def initialize(user)$/;"	f	class:Ability
 Permission	app/models/permission.rb	/^class Permission < ActiveRecord::Base$/;"	c
 Project	app/models/project.rb	/^class Project < ActiveRecord::Base$/;"	c
 Ticket	app/models/ticket.rb	/^class Ticket < ActiveRecord::Base$/;"	c
@@ -78,6 +84,9 @@ change	db/migrate/20141203031400_add_admin_to_users.rb	/^  def change$/;"	f	clas
 CreatePermissions	db/migrate/20141206071826_create_permissions.rb	/^class CreatePermissions < ActiveRecord::Migration$/;"	c
 change	db/migrate/20141206071826_create_permissions.rb	/^  def change$/;"	f	class:CreatePermissions
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+cannot_create_tickets!	spec/controllers/tickets_controller_spec.rb	/^    def cannot_create_tickets!$/;"	f
+cannot_delete_tickets!	spec/controllers/tickets_controller_spec.rb	/^    def cannot_delete_tickets!$/;"	f
+cannot_edit_tickets!	spec/controllers/tickets_controller_spec.rb	/^    def cannot_edit_tickets!$/;"	f
 AuthHelpers	spec/support/auth_helpers.rb	/^module AuthHelpers$/;"	m
 sign_in	spec/support/auth_helpers.rb	/^  def sign_in(user)$/;"	f	class:AuthHelpers
 AuthenticationHelpers	spec/support/authentication_helpers.rb	/^module AuthenticationHelpers$/;"	m
