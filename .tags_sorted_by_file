@@ -5,6 +5,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 Admin	app/controllers/admin/base_controller.rb	/^class Admin::BaseController < ApplicationController$/;"	c
 index	app/controllers/admin/base_controller.rb	/^  def index$/;"	f	class:Admin
+Admin	app/controllers/admin/permissions_controller.rb	/^class Admin::PermissionsController < Admin::BaseController$/;"	c
+index	app/controllers/admin/permissions_controller.rb	/^  def index$/;"	f	class:Admin
+set_user	app/controllers/admin/permissions_controller.rb	/^    def set_user$/;"	f	class:Admin
 Admin	app/controllers/admin/users_controller.rb	/^class Admin::UsersController < Admin::BaseController$/;"	c
 create	app/controllers/admin/users_controller.rb	/^  def create$/;"	f	class:Admin
 destroy	app/controllers/admin/users_controller.rb	/^  def destroy$/;"	f	class:Admin
@@ -53,6 +56,8 @@ set_user	app/controllers/users_controller.rb	/^    def set_user$/;"	f	class:User
 show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
 update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
 user_params	app/controllers/users_controller.rb	/^    def user_params$/;"	f	class:UsersController
+Admin	app/helpers/admin/permissions_helper.rb	/^module Admin::PermissionsHelper$/;"	m
+permissions	app/helpers/admin/permissions_helper.rb	/^  def permissions$/;"	f	class:Admin
 Admin	app/helpers/admin/users_helper.rb	/^module Admin::UsersHelper$/;"	m
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 admins_only	app/helpers/application_helper.rb	/^  def admins_only(&block)$/;"	f	class:ApplicationHelper
@@ -92,6 +97,7 @@ sign_in	spec/support/auth_helpers.rb	/^  def sign_in(user)$/;"	f	class:AuthHelpe
 AuthenticationHelpers	spec/support/authentication_helpers.rb	/^module AuthenticationHelpers$/;"	m
 sign_in_as!	spec/support/authentication_helpers.rb	/^  def sign_in_as!(user)$/;"	f	class:AuthenticationHelpers
 AuthorizationHelpers	spec/support/authorization_helpers.rb	/^module AuthorizationHelpers$/;"	m
+check_permission_box	spec/support/authorization_helpers.rb	/^  def check_permission_box(permission, object)$/;"	f	class:AuthorizationHelpers
 define_permission!	spec/support/authorization_helpers.rb	/^  def define_permission!(user, action, thing)$/;"	f	class:AuthorizationHelpers
 CapybaraHelpers	spec/support/capybara_helpers.rb	/^module CapybaraHelpers$/;"	m
 assert_link_for	spec/support/capybara_helpers.rb	/^  def assert_link_for(text)$/;"	f	class:CapybaraHelpers

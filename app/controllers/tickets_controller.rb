@@ -67,6 +67,7 @@ class TicketsController < ApplicationController
       end
     end
 
+    # cancancan provided helpers for current_user
     def authorize_update!
       if !current_user.admin? && cannot?('edit tickets'.to_sym, @project)
         flash[:error] = 'You cannot edit tickets on this project.'

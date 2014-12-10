@@ -8,7 +8,9 @@ Ability	app/models/ability.rb	/^class Ability$/;"	c
 AddAdminToUsers	db/migrate/20141203031400_add_admin_to_users.rb	/^class AddAdminToUsers < ActiveRecord::Migration$/;"	c
 AddUserToTickets	db/migrate/20141202083753_add_user_to_tickets.rb	/^class AddUserToTickets < ActiveRecord::Migration$/;"	c
 Admin	app/controllers/admin/base_controller.rb	/^class Admin::BaseController < ApplicationController$/;"	c
+Admin	app/controllers/admin/permissions_controller.rb	/^class Admin::PermissionsController < Admin::BaseController$/;"	c
 Admin	app/controllers/admin/users_controller.rb	/^class Admin::UsersController < Admin::BaseController$/;"	c
+Admin	app/helpers/admin/permissions_helper.rb	/^module Admin::PermissionsHelper$/;"	m
 Admin	app/helpers/admin/users_helper.rb	/^module Admin::UsersHelper$/;"	m
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Rails4InAction
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
@@ -51,6 +53,7 @@ change	db/migrate/20141127040822_create_users.rb	/^  def change$/;"	f	class:Crea
 change	db/migrate/20141202083753_add_user_to_tickets.rb	/^  def change$/;"	f	class:AddUserToTickets
 change	db/migrate/20141203031400_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
 change	db/migrate/20141206071826_create_permissions.rb	/^  def change$/;"	f	class:CreatePermissions
+check_permission_box	spec/support/authorization_helpers.rb	/^  def check_permission_box(permission, object)$/;"	f	class:AuthorizationHelpers
 create	app/controllers/admin/users_controller.rb	/^  def create$/;"	f	class:Admin
 create	app/controllers/projects_controller.rb	/^  def create$/;"	f	class:ProjectsController
 create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
@@ -66,6 +69,7 @@ edit	app/controllers/projects_controller.rb	/^  def edit$/;"	f	class:ProjectsCon
 edit	app/controllers/tickets_controller.rb	/^  def edit$/;"	f	class:TicketsController
 edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
 index	app/controllers/admin/base_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/permissions_controller.rb	/^  def index$/;"	f	class:Admin
 index	app/controllers/admin/users_controller.rb	/^  def index$/;"	f	class:Admin
 index	app/controllers/projects_controller.rb	/^  def index$/;"	f	class:ProjectsController
 initialize	app/models/ability.rb	/^  def initialize(user)$/;"	f	class:Ability
@@ -74,11 +78,13 @@ new	app/controllers/projects_controller.rb	/^  def new$/;"	f	class:ProjectsContr
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 new	app/controllers/tickets_controller.rb	/^  def new$/;"	f	class:TicketsController
 new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
+permissions	app/helpers/admin/permissions_helper.rb	/^  def permissions$/;"	f	class:Admin
 project_params	app/controllers/projects_controller.rb	/^    def project_params$/;"	f	class:ProjectsController
 require_signin!	app/controllers/application_controller.rb	/^    def require_signin!$/;"	f	class:ApplicationController
 set_project	app/controllers/projects_controller.rb	/^    def set_project$/;"	f	class:ProjectsController
 set_project	app/controllers/tickets_controller.rb	/^    def set_project$/;"	f	class:TicketsController
 set_ticket	app/controllers/tickets_controller.rb	/^    def set_ticket$/;"	f	class:TicketsController
+set_user	app/controllers/admin/permissions_controller.rb	/^    def set_user$/;"	f	class:Admin
 set_user	app/controllers/admin/users_controller.rb	/^    def set_user$/;"	f	class:Admin
 set_user	app/controllers/users_controller.rb	/^    def set_user$/;"	f	class:UsersController
 show	app/controllers/admin/users_controller.rb	/^  def show$/;"	f	class:Admin
