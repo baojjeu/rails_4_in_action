@@ -17,11 +17,10 @@ gem 'cancancan', '~> 1.9'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
-  gem 'growl'
+  gem 'guard-rspec'
 end
 
 group :test do
   gem 'capybara', '2.4.4'
   gem 'factory_girl_rails', '4.5.0'
-  gem 'guard-rspec'
 end
