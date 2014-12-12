@@ -8,24 +8,26 @@
 </head>
 <body>
 
-<% if current_user %>
-  Signed in as <%= current_user.email %>
-  <%= link_to 'Sign out', signout_path, method: :delete %>
-  <% admins_only do %>
-    <%= link_to 'Admin', admin_root_path %>
+<div class="container">
+  <% if current_user %>
+    Signed in as <%= current_user.email %>
+    <%= link_to 'Sign out', signout_path, method: :delete %>
+    <% admins_only do %>
+      <%= link_to 'Admin', admin_root_path %>
+    <% end %>
+  <% else %>
+    <%= link_to 'Sign in', signin_path %>
+    <%= link_to 'Sign up', new_user_path %>
   <% end %>
-<% else %>
-  <%= link_to 'Sign in', signin_path %>
-  <%= link_to 'Sign up', new_user_path %>
-<% end %>
 
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>">
-    <%= value %>
-  </div>
-<% end %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
