@@ -20,9 +20,9 @@ feature 'Deleting tickets' do
   end
 
   scenario 'Deleting a ticket' do
-    click_link 'Delete ticket'
+    click_link 'Delete Ticket'
 
-    expect(page).to have_content('Ticket has been destroyed.')
+    expect(page).to have_content('Ticket has been deleted.')
     expect(page).to_not have_content ticket.title
     expect(page.current_url).to eql(project_url(project))
   end

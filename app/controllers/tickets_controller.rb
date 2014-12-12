@@ -41,7 +41,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to @project, flash: { success: 'Ticket has been destroyed.' }
+    redirect_to @project, flash: { success: 'Ticket has been deleted.' }
   end
 
   private

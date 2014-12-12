@@ -65,7 +65,7 @@ feature 'Hidden links' do
       define_permission!(user, 'view', project)
       visit project_path(project)
       click_link ticket.title
-      assert_no_link_for 'Edit ticket'
+      assert_no_link_for 'Edit Ticket'
     end
 
     scenario 'Edit ticket link is shown to a user with permission' do
@@ -74,7 +74,7 @@ feature 'Hidden links' do
       define_permission!(user, 'edit tickets', project)
       visit project_path(project)
       click_link ticket.title
-      assert_link_for 'Edit ticket'
+      assert_link_for 'Edit Ticket'
     end
 
     scenario 'Delete ticket is shown to a user with permission' do
@@ -83,7 +83,7 @@ feature 'Hidden links' do
       define_permission!(user, 'delete tickets', project)
       visit project_path(project)
       click_link ticket.title
-      assert_link_for 'Delete ticket'
+      assert_link_for 'Delete Ticket'
     end
 
     scenario 'Delete ticket is hidden to a user without permission' do
@@ -91,7 +91,7 @@ feature 'Hidden links' do
       define_permission!(user, 'view', project)
       visit project_path(project)
       click_link ticket.title
-      assert_no_link_for 'Delete ticket'
+      assert_no_link_for 'Delete Ticket'
     end
   end
 
@@ -127,7 +127,7 @@ feature 'Hidden links' do
 
       click_link ticket.title
 
-      assert_link_for 'Edit ticket'
+      assert_link_for 'Edit Ticket'
     end
 
     scenario 'Delete tickets link is shown to admins' do
@@ -137,7 +137,7 @@ feature 'Hidden links' do
 
       click_link ticket.title
 
-      assert_link_for 'Delete ticket'
+      assert_link_for 'Delete Ticket'
     end
   end
 end

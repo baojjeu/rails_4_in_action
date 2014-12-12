@@ -15,7 +15,7 @@ feature 'Editing tickets' do
     sign_in_as!(user)
     click_link project.name
     click_link ticket.title
-    click_link 'Edit ticket'
+    click_link 'Edit Ticket'
   end
 
   scenario 'Updating a ticket' do
