@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'cancancan', '~> 1.9'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
