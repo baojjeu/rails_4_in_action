@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213074750) do
+ActiveRecord::Schema.define(version: 20141215091241) do
 
   create_table "assets", force: true do |t|
     t.string   "asset"
     t.integer  "ticket_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content_type"
   end
 
   add_index "assets", ["ticket_id"], name: "index_assets_on_ticket_id"
