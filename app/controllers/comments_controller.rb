@@ -4,10 +4,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @ticket.comments.build(comment_params)
+    @comment.user = current_user
     if @comment.save
       redirect_to [@ticket.project, @ticket],
           flash: { success: 'Comments has been created.' }
     else
+      @states = State.all
       flash[:error] = 'Comment has not been created.'
       render template: 'tickets/show'
     end
@@ -19,6 +21,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:text)
+      params.require(:comment).permit(:text, :state_id)
     end
 end
