@@ -29,7 +29,7 @@ feature 'Creating Comments' do
     expect(page).to have_content "Text can't be blank"
   end
 
-  scenario "Creating a ticket's state" do
+  scenario "Changing a ticket's state" do
     click_link ticket.title
     fill_in 'Text', with: 'This is a real issue'
     select 'Open', from: 'State'
