@@ -8,6 +8,11 @@ module CapybaraHelpers
     expect(page).to have_css('a', text: text),
       "Expected to see the #{text.inspect} link, but did not."
   end
+
+  def state_link_for(state_name)
+    state = State.find_by(name: state_name)
+    "#state_#{state.id}"
+  end
 end
 
 RSpec.configure do |config|

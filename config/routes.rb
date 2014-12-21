@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'base#index'
-    resources :states
+    resources :states do
+      member do
+        post :make_default
+      end
+    end
     resources :users do
       resources :permissions
       put 'permissions', to: 'permissions#set',
