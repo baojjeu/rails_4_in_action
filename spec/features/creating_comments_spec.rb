@@ -16,7 +16,7 @@ feature 'Creating Comments' do
     click_link ticket.title
     fill_in 'Text', with: 'Added a comment!'
     click_button 'Create Comment'
-    expect(page).to have_content 'Comments has been created.'
+    expect(page).to have_content 'Comment has been created.'
     within('#comments') do
       expect(page).to have_content 'Added a comment!'
     end
@@ -30,6 +30,8 @@ feature 'Creating Comments' do
   end
 
   scenario "Changing a ticket's state" do
+    define_permission!(user, 'change states', project)
+
     click_link ticket.title
     fill_in 'Text', with: 'This is a real issue'
     select 'Open', from: 'State'
@@ -40,5 +42,14 @@ feature 'Creating Comments' do
     within('#comments') do
       expect(page).to have_content 'State: Open'
     end
+  end
+
+  scenario 'A user without permission cannot change the state' do
+    click_link ticket.title
+    message = 'Unable to find css "#comment_state_id"'
+
+    expect {
+      find('#comment_state_id')
+    }.to raise_error Capybara::ElementNotFound, message
   end
 end

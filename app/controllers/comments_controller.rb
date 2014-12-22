@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       redirect_to [@ticket.project, @ticket],
-          flash: { success: 'Comments has been created.' }
+          flash: { success: 'Comment has been created.' }
     else
       @states = State.all
       flash[:error] = 'Comment has not been created.'

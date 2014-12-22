@@ -7,7 +7,14 @@ Admin	app/controllers/admin/base_controller.rb	/^class Admin::BaseController < A
 index	app/controllers/admin/base_controller.rb	/^  def index$/;"	f	class:Admin
 Admin	app/controllers/admin/permissions_controller.rb	/^class Admin::PermissionsController < Admin::BaseController$/;"	c
 index	app/controllers/admin/permissions_controller.rb	/^  def index$/;"	f	class:Admin
+set	app/controllers/admin/permissions_controller.rb	/^  def set$/;"	f	class:Admin
 set_user	app/controllers/admin/permissions_controller.rb	/^    def set_user$/;"	f	class:Admin
+Admin	app/controllers/admin/states_controller.rb	/^class Admin::StatesController < Admin::BaseController$/;"	c
+create	app/controllers/admin/states_controller.rb	/^  def create$/;"	f	class:Admin
+index	app/controllers/admin/states_controller.rb	/^  def index$/;"	f	class:Admin
+make_default	app/controllers/admin/states_controller.rb	/^  def make_default$/;"	f	class:Admin
+new	app/controllers/admin/states_controller.rb	/^  def new$/;"	f	class:Admin
+state_params	app/controllers/admin/states_controller.rb	/^    def state_params$/;"	f	class:Admin
 Admin	app/controllers/admin/users_controller.rb	/^class Admin::UsersController < Admin::BaseController$/;"	c
 create	app/controllers/admin/users_controller.rb	/^  def create$/;"	f	class:Admin
 destroy	app/controllers/admin/users_controller.rb	/^  def destroy$/;"	f	class:Admin
@@ -22,6 +29,13 @@ ApplicationController	app/controllers/application_controller.rb	/^class Applicat
 authorize_admin!	app/controllers/application_controller.rb	/^    def authorize_admin!$/;"	f	class:ApplicationController
 current_user	app/controllers/application_controller.rb	/^    def current_user$/;"	f	class:ApplicationController
 require_signin!	app/controllers/application_controller.rb	/^    def require_signin!$/;"	f	class:ApplicationController
+CommentsController	app/controllers/comments_controller.rb	/^class CommentsController < ApplicationController$/;"	c
+comment_params	app/controllers/comments_controller.rb	/^    def comment_params$/;"	f	class:CommentsController
+create	app/controllers/comments_controller.rb	/^  def create$/;"	f	class:CommentsController
+set_ticket	app/controllers/comments_controller.rb	/^    def set_ticket$/;"	f	class:CommentsController
+FilesController	app/controllers/files_controller.rb	/^class FilesController < ApplicationController$/;"	c
+new	app/controllers/files_controller.rb	/^  def new$/;"	f	class:FilesController
+show	app/controllers/files_controller.rb	/^  def show$/;"	f	class:FilesController
 ProjectsController	app/controllers/projects_controller.rb	/^class ProjectsController < ApplicationController$/;"	c
 create	app/controllers/projects_controller.rb	/^  def create$/;"	f	class:ProjectsController
 destroy	app/controllers/projects_controller.rb	/^  def destroy$/;"	f	class:ProjectsController
@@ -34,6 +48,7 @@ show	app/controllers/projects_controller.rb	/^  def show$/;"	f	class:ProjectsCon
 update	app/controllers/projects_controller.rb	/^  def update$/;"	f	class:ProjectsController
 SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
 create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
+destroy	app/controllers/sessions_controller.rb	/^  def destroy$/;"	f	class:SessionsController
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 TicketsController	app/controllers/tickets_controller.rb	/^class TicketsController < ApplicationController$/;"	c
 authorize_create!	app/controllers/tickets_controller.rb	/^    def authorize_create!$/;"	f	class:TicketsController
@@ -63,17 +78,30 @@ ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/
 admins_only	app/helpers/application_helper.rb	/^  def admins_only(&block)$/;"	f	class:ApplicationHelper
 authorized?	app/helpers/application_helper.rb	/^  def authorized?(permission, thing, &block)$/;"	f	class:ApplicationHelper
 title	app/helpers/application_helper.rb	/^  def title(*parts)$/;"	f	class:ApplicationHelper
+CommentsHelper	app/helpers/comments_helper.rb	/^module CommentsHelper$/;"	m
+FilesHelper	app/helpers/files_helper.rb	/^module FilesHelper$/;"	m
 ProjectsHelper	app/helpers/projects_helper.rb	/^module ProjectsHelper$/;"	m
 SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
 TicketsHelper	app/helpers/tickets_helper.rb	/^module TicketsHelper$/;"	m
+state_for	app/helpers/tickets_helper.rb	/^  def state_for(comment)$/;"	f	class:TicketsHelper
 UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
 Ability	app/models/ability.rb	/^class Ability$/;"	c
 initialize	app/models/ability.rb	/^  def initialize(user)$/;"	f	class:Ability
+Asset	app/models/asset.rb	/^class Asset < ActiveRecord::Base$/;"	c
+update_content_type	app/models/asset.rb	/^    def update_content_type$/;"	f	class:Asset
+Comment	app/models/comment.rb	/^class Comment < ActiveRecord::Base$/;"	c
+set_previous_state	app/models/comment.rb	/^    def set_previous_state$/;"	f	class:Comment
+set_ticket_state	app/models/comment.rb	/^    def set_ticket_state$/;"	f	class:Comment
 Permission	app/models/permission.rb	/^class Permission < ActiveRecord::Base$/;"	c
 Project	app/models/project.rb	/^class Project < ActiveRecord::Base$/;"	c
+State	app/models/state.rb	/^class State < ActiveRecord::Base$/;"	c
+default!	app/models/state.rb	/^  def default!$/;"	f	class:State
+to_s	app/models/state.rb	/^  def to_s$/;"	f	class:State
 Ticket	app/models/ticket.rb	/^class Ticket < ActiveRecord::Base$/;"	c
 User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
 to_s	app/models/user.rb	/^  def to_s$/;"	f	class:User
+AssetUploader	app/uploaders/asset_uploader.rb	/^class AssetUploader < CarrierWave::Uploader::Base$/;"	c
+store_dir	app/uploaders/asset_uploader.rb	/^  def store_dir$/;"	f	class:AssetUploader
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Rails4InAction
 Rails4InAction	config/application.rb	/^module Rails4InAction$/;"	m
 CreateProjects	db/migrate/20141123104758_create_projects.rb	/^class CreateProjects < ActiveRecord::Migration$/;"	c
@@ -88,6 +116,20 @@ AddAdminToUsers	db/migrate/20141203031400_add_admin_to_users.rb	/^class AddAdmin
 change	db/migrate/20141203031400_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
 CreatePermissions	db/migrate/20141206071826_create_permissions.rb	/^class CreatePermissions < ActiveRecord::Migration$/;"	c
 change	db/migrate/20141206071826_create_permissions.rb	/^  def change$/;"	f	class:CreatePermissions
+AddAssetToTickets	db/migrate/20141213061802_add_asset_to_tickets.rb	/^class AddAssetToTickets < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141213061802_add_asset_to_tickets.rb	/^  def change$/;"	f	class:AddAssetToTickets
+CreateAssets	db/migrate/20141213074750_create_assets.rb	/^class CreateAssets < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141213074750_create_assets.rb	/^  def change$/;"	f	class:CreateAssets
+AddContentTypeToAssets	db/migrate/20141215091241_add_content_type_to_assets.rb	/^class AddContentTypeToAssets < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141215091241_add_content_type_to_assets.rb	/^  def change$/;"	f	class:AddContentTypeToAssets
+CreateComments	db/migrate/20141217032515_create_comments.rb	/^class CreateComments < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141217032515_create_comments.rb	/^  def change$/;"	f	class:CreateComments
+CreateStates	db/migrate/20141217143819_create_states.rb	/^class CreateStates < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141217143819_create_states.rb	/^  def change$/;"	f	class:CreateStates
+AddPreviousStateIdToComments	db/migrate/20141220124617_add_previous_state_id_to_comments.rb	/^class AddPreviousStateIdToComments < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141220124617_add_previous_state_id_to_comments.rb	/^  def change$/;"	f	class:AddPreviousStateIdToComments
+AddDefaultToStates	db/migrate/20141221124518_add_default_to_states.rb	/^class AddDefaultToStates < ActiveRecord::Migration$/;"	c
+change	db/migrate/20141221124518_add_default_to_states.rb	/^  def change$/;"	f	class:AddDefaultToStates
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 cannot_create_tickets!	spec/controllers/tickets_controller_spec.rb	/^    def cannot_create_tickets!$/;"	f
 cannot_delete_tickets!	spec/controllers/tickets_controller_spec.rb	/^    def cannot_delete_tickets!$/;"	f
@@ -102,3 +144,4 @@ define_permission!	spec/support/authorization_helpers.rb	/^  def define_permissi
 CapybaraHelpers	spec/support/capybara_helpers.rb	/^module CapybaraHelpers$/;"	m
 assert_link_for	spec/support/capybara_helpers.rb	/^  def assert_link_for(text)$/;"	f	class:CapybaraHelpers
 assert_no_link_for	spec/support/capybara_helpers.rb	/^  def assert_no_link_for(text)$/;"	f	class:CapybaraHelpers
+state_link_for	spec/support/capybara_helpers.rb	/^  def state_link_for(state_name)$/;"	f	class:CapybaraHelpers
